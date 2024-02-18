@@ -35,7 +35,7 @@ class Evaluation:
         return tf.keras.models.load_model(str(path))
 
     def evaluation(self):
-        self.model = self.load_model(Path(self.config.path_of_model))
+        model = self.load_model(Path(self.config.path_of_model))
         self._valid_generator()
         self.score = model.evaluate(self.valid_generator)
 
